@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>  
+	<script type="text/javascript">
+		function sendEmail() {
+			Email.send({
+				SecureToken : "43a1beaa-aba6-48e7-8052-1ae3266842ef",
+				To : 'rameshelava@gmail.com, elavarasan_natarajan@yahoo.com, princedecors92@gmail.com, microdhina@yahoo.com, atlasdhina@gmail.com',
+				From : "rameshelava@gmail.com",
+				Subject : "Atlas systems Customer enquiry Dhinakaran",
+				Body : "Atlas systems mail testing customer enquiry ",
+			})
+			.then(function(message){
+				console.log("Please check network log for response")
+			});
+		}
+	</script>
+</head>
+<body>  
+	<form method="post">
+		<input type="button" value="Send Email" onclick="sendEmail()"/>
+	</form>  
+</body>
+</html>

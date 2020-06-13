@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <title>Bootstrap Login Page Card with Floating Labels</title>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <meta name="robots" content="noindex, nofollow">
+      <meta name="googlebot" content="noindex, nofollow">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <script src="https://apis.google.com/js/api:client.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+      <link href="/static/assets/css/login_style.css" rel="stylesheet">
+   </head>
+   <body>
+      <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
+      <body>
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                  <div class="card card-signin my-5">
+                     <div class="card-body">
+                        <h5 class="card-title text-center">Sign Up</h5>
+                        <form id = "registerForm" class="form-signin">
+                           <div class="form-label-group"> 
+                              <input type="email" name ="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required  autofocus>
+                              <label for="inputEmail">Email address</label>
+                           </div>
+                           <div class="form-label-group">
+                              <input type="password" name ="inputPassword"  id="inputPassword" class="form-control" placeholder="Password" required>
+                              <label for="inputPassword">Password</label>
+                           </div>
+						   <div class="form-label-group">
+                              <input type="password" name ="confirmPassword"  id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                              <label for="confirmPassword">Confirm Password</label>
+                           </div>
+                           <button class="btn btn-lg btn-primary btn-block text-uppercase" id="emailRegister" type="submit">Sign Up</button>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </body>
+   <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+   <script src="/static/assets/js/form_submit.js"></script>
+   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script>
+		
+		jQuery.validator.setDefaults({
+		  	debug: true,
+		  	success:  function(label){
+        		label.attr('id', 'valid');
+   		 	},
+		});
+		$( "#registerForm" ).validate({
+		  	rules: {
+		    	inputPassword: "required",
+		    	confirmPassword: {
+		      		equalTo: "#inputPassword"
+		    	}
+		  	},
+		  	messages: {
+		  		inputEmail: {
+		  			required: "Please enter email"
+		  		},
+		  		inputPassword: {
+	  				required: "Please enter password"
+		  		},
+		  		confirmPassword: {
+		  			required: "Please enter confirm password",
+		      		equalTo: "Please enter same Password",
+		    	}
+		  	}
+		});
+	</script>
+   </body>
+</html>

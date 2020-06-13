@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <title>Wishmecards Login Page</title>
+      <meta name="robots" content="noindex, nofollow">
+      <meta name="googlebot" content="noindex, nofollow">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <script src="https://apis.google.com/js/api:client.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+      <link href="/static/assets/css/login_style.css" rel="stylesheet">
+	  <link href="/static/assets/css/css-loader.css" rel="stylesheet">
+   </head>
+   <body>
+   <a style="display:inline-block;width: 100%; padding-top:10px; padding-bottom:10px; background-color:#7460ee; color:white; text-align:center; bottom:0; position:fixed; font-weight: 900; text-decoration: none; z-index:999;" href="index.html"><i class="fas fa-home"></i> DigitalBizCard
+</a>
+      <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
+      <body>
+	  <div id="loader" class="loader loader-default is-active"></div>
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                  <div class="card card-signin my-5">
+                     <div class="card-body">
+                        <h5 class="card-title text-center">Sign In</h5>
+                        <form class="form-signin" id="loginForm">
+                           <button id ="customBtn" class="btn btn-lg btn-google btn-block text-uppercase" type="button"><i class="fab fa-google mr-2"></i>Continue with Google</button>
+                           <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="button" onclick="fbLogin()" id="fbLink"><i class="fab fa-facebook-f mr-2"></i>Continue with Facebook</button>
+                           <hr class="my-4">
+                           <div class="form-label-group">
+                              <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                              <label for="inputEmail">Email address</label>
+                           </div>
+                           <div class="form-label-group">
+                              <input type="password" id="inputPassword"  name="inputPassword" class="form-control" placeholder="Password"  required>
+                              <label for="inputPassword">Password</label>
+                           </div>
+                           <div id="invalid_cred" class="invalid_cred custom-control  mb-3">
+                              <label>The email or password is incorrect</label>
+                           </div>
+                           <button id="emailLogin" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+						   <a href="signup.html" id="" class="btn btn-lg btn-primary btn-block text-uppercase">OR Sign Up</a>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </body>
+   <script src="/static/assets/js/facebook_login.js"></script>
+   <script src="/static/assets/js/google_login.js"></script>
+   <script>startApp();</script>
+   <script src="/static/assets/js/login.js"></script>
+   </body>
+</html>

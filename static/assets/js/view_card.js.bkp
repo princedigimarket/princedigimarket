@@ -1,0 +1,173 @@
+var baseUrl = "https://einvite.tech/";
+
+$(document).ready(function () {
+	$.ajax({
+		type: 'GET',
+		url: baseUrl + 'view_card/elavarasan',
+		contentType: "application/json",
+		sucess: function (data) {
+			alert("Gor reapsone ");
+			console.log(JSON.stringify(data));
+			localStorage.visiting_card_id = Object.values(data._id)
+			console.log('Visiting exist or created Visiting Card ID : ' + Object.values(data._id));
+
+			var user_name = data.user_name;
+			var email = data.email;
+			var mobile_no = data.mobile_no;
+			var company_name = data.company_name;
+			var designation = data.designation;
+			var company_link = data.company_link;
+			var company_address = data.company_address;
+			var services_provided = data.services_provided;
+			var facebook_link = data.facebook_link;
+			var messenger_link = data.messenger_link;
+			var twitter_link = data.twitter_link;
+			var linkedin_link = data.linkedin_link;
+			var instagram_link = data.instagram_link;
+			var youtube_link = data.youtube_link;
+			var payment_link = data.payment_link;
+			var other_payment_link = data.other_payment_link;
+			var google_map_link = data.google_map_link;
+			var profile_picture_link = data.profile_picture_link;
+			
+			if(facebook_link === "" &&  twitter_link === "" &&  linkedin_link === ""  &&  instagram_link === "" )
+			{
+				$('#follow_me_heading').hide();
+			}
+			if(company_link === "" &&  google_map_link === ""){
+				$('#company_heading').hide();
+			}
+
+			if(data.profile_picture_exist){
+				console.log("profile picture exist image_ref_id data.profile_picture_exist "+data.profile_picture_exist);
+				$("#profile_picture_link").attr("src",baseUrl+"display_image/"+localStorage.visiting_card_id);
+			}else{
+				console.log("no profile picture exist data.profile_picture_exist  image_ref_id "+data.profile_picture_exist);
+			}
+
+			$("#user_name").text(toTitleCase(user_name));
+			if (email !== "") {
+				console.log("exiy email "+$("#email").val());
+				$("#email").attr("href", "mailto:" + email + "?Subject=Hello");
+				$('#email').show();
+			}else{
+				console.log("NO email "+email);
+				$('#email').hide();
+			}
+			if (mobile_no !== "") {
+			$("#mobile_no").attr("href", "tel:+91" + mobile_no);
+			$('#mobile_no').show();
+			}else{
+				console.log("NO mobile_no "+mobile_no);
+				$('#mobile_no').hide();
+			}
+			if (company_name !== "") {
+			$('#company_name').text(company_name.toUpperCase());
+			$('#company_name').show();
+			}else{
+				console.log("NO company_name "+company_name);
+				$('#company_name').hide();
+			}
+			if (designation !== "") {
+			$('#designation').text(designation.toUpperCase());
+			$('#designation').show();
+			}else{
+				console.log("NO designation "+designation);
+				$('#designation').hide();
+			}
+			if (mobile_no !== "") {
+			$("#whatsapp_link").attr("href", "https://api.whatsapp.com/send?phone=+91" + mobile_no);
+			$('#whatsapp_link').show();
+			}else{
+				console.log("NO whatsapp_link mobile_no "+mobile_no);
+				$('#whatsapp_link').hide();
+			}
+			if (company_link !== "") {
+			$("#company_link").attr("href", company_link);
+			$('#company_link').show();
+			}else{
+				console.log("NO company_link "+company_link);
+				$('#company_link').hide();
+			}
+			if (messenger_link !== "") {
+			$("#messenger_link").attr("href", messenger_link);
+			$('#messenger_link').show();
+			}else{
+				console.log("NO messenger_link "+messenger_link);
+				$('#messenger_link').hide();
+			}
+			if (facebook_link !== "") {
+			$("#facebook_link").attr("href", facebook_link);
+			$('#facebook_link').show();
+			}else{
+				console.log("NO facebook_link "+facebook_link);
+				$('#facebook_link').hide();
+			}
+			if (twitter_link !== "") {
+			$("#twitter_link").attr("href", twitter_link);
+			$('#twitter_link').show();
+			}else{
+				console.log("NO twitter_link "+twitter_link);
+				$('#twitter_link').hide();
+			}
+			if (linkedin_link !== "") {
+			$("#linkedin_link").attr("href", linkedin_link);
+			$('#linkedin_link').show();
+			}else{
+				console.log("NO linkedin_link "+linkedin_link);
+				$('#linkedin_link').hide();
+			}
+			if (instagram_link !== "") {
+			$("#instagram_link").attr("href", instagram_link);
+			$('#instagram_link').show();
+			}else{
+				console.log("NO instagram_link "+instagram_link);
+				$('#instagram_link').hide();
+			}
+			if (youtube_link !== "") {
+			$("#youtube_link").attr("href", youtube_link);
+			$('#youtube_link').show();
+			}else{
+				console.log("NO youtube_link "+youtube_link);
+				$('#youtube_link').hide();
+			}
+			if (payment_link !== "") {
+			$("#payment_link").attr("href", payment_link);
+			$('#payment_link').show();
+			}else{
+				console.log("NO payment_link "+payment_link);
+				$('#payment_link').hide();
+			}
+			if (other_payment_link !== "") {
+			$("#other_payment_link").attr("href", other_payment_link);
+			$('#other_payment_link').show();
+			}else{
+				console.log("NO other_payment_link "+other_payment_link);
+				$('#other_payment_link').hide();
+			}
+			if (google_map_link !== "") {
+			$("#google_map_link").attr("href", google_map_link);
+			$('#google_map_link').show();
+			}else{
+				console.log("NO google_map_link "+google_map_link);
+				$('#google_map_link').hide();
+			}
+		},
+		error: function (xhr, status, error) {
+			alert("fail reapsone ");
+			console.log(xhr);
+			var err = JSON.parse(xhr.responseText);
+			console.log("xhr.responseText : " + xhr.responseText);
+			console.log("error message : " + err.error);
+			console.log(xhr.status);
+			console.log("status : " + status);
+			console.log("error : " + error);
+		}
+	});
+
+	function toTitleCase(str) {
+		return str.replace(/(?:^|\s)\w/g, function (match) {
+			return match.toUpperCase();
+		});
+	}
+});

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- Tell the browser to be responsive to screen width -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- Favicon icon -->
+      <!-- <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">-->
+      <title>Professional Business or Visiting card for Individuals or Company</title>
+      <!-- Bootstrap Core CSS -->
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+      <link href="assets/css/profile_style.css" rel="stylesheet">
+      <!-- You can change the theme colors from here -->
+	  <style>
+	  *{padding:0;margin:0;}
+
+body{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:18px;
+	background-color:#CCC;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:8px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	z-index:999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+</style>
+   </head>
+   <body class="fix-header fix-sidebar card-no-border">
+   <a id ="editCard" style="display:inline-block;width: 100%; padding-top:10px; padding-bottom:10px; background-color:#7460ee; color:white; text-align:center; bottom:0; position:fixed; font-weight: 900; text-decoration: none; z-index:999;" href="editCard.html"><i class="fas fa-edit"></i> Edit Card
+</a>
+<a id ="home"   href="index.html" class="float">
+<i style="margin-top: 18px;" class="fas fa-home"></i>
+</a>
+      <div id="main-wrapper">
+         <div class="page-wrapper no_pad_bottom">
+            <div class="container-fluid pad_15 no_pad_bottom">
+               <!-- Row -->
+               <div class="row center_align no_pad big_pad" >
+                  <!-- Column -->
+                  <div class="col-lg-4 col-xlg-3 col-md-5 no_pad">
+                     <!-- Column -->
+                     <div class="card no_margin">
+                        <!--<img class="card-img-top" src="assets/images/background/profile-bg.jpg" alt="Card image cap">-->
+                        <div class="top_background little-profile text-center">
+                           <div class="pro-img"><img id="profile_picture_link" src ="/static/assets/img/profile_dummy.png" alt="user" /></div>
+                        </div>
+						
+                        <div class="card-block little-profile text-center"  style="padding-left: 15px;padding-right: 15px;    padding-top: 15px; margin-bottom:50px;">
+                           <h3 id ="user_name" class="m-b-0 name_style"></h3>
+                           <p id ="company_name" class="designation" style="margin-block-end: 0em; margin-bottom: 5px;" ></p>
+                           <p id ="designation" class="designation" style="    margin-block-end: 0em;
+                              font-size: 1rem !important;
+                              line-height: 0.8rem;
+                              margin-bottom: 21px;" ></p>
+                           <div id ="follow_me_heading" class="row heading_style">
+                              <h3 class ="heading_font"><a   >Follow Me : </a></h3>
+                           </div>
+                           <div class="row center_align">
+                              <div class="social-buttons">
+                                 <!-- facebook  Button -->
+                                 <a id="facebook_link" class="social-margin">
+                                    <div class="social-icon facebook">
+                                       <i class="fab fa-facebook-f" aria-hidden="true"></i> 
+                                       <span id ="user_name" >facebook</span>
+                                    </div>
+                                 </a>
+                                 <!-- TwitterButton -->
+                                 <a id="twitter_link" class="social-margin">
+                                    <div class="social-icon twitter">
+                                       <i class="fab fa-twitter" aria-hidden="true"></i>
+                                       <span id ="user_name" >twitter</span>
+                                    </div>
+                                 </a>
+                                 <!-- LinkedIn Button -->
+                                 <a id="linkedin_link" class="social-margin" >
+                                    <div class="social-icon linkedin">
+                                       <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                       <span id ="user_name" >linkedin</span>
+                                    </div>
+                                 </a>
+                                 <!-- Instagram Button -->
+                                 <a id="instagram_link"  class="social-margin" >
+                                    <div class="social-icon instagram">
+                                       <i class="fab fa-instagram" aria-hidden="true"></i>
+                                       <span id ="user_name" >instagram</span>
+                                    </div>
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="row heading_style">
+                              <h3 class ="heading_font"><a  >Contact : </a></h3>
+                           </div>
+                           <div class="row center_align">
+                              <div class="social-buttons">
+                                 <!-- call  Button -->
+                                 <a  id ="mobile_no" class="social-margin">
+                                    <div class="social-icon call">
+                                       <i class="fas fa-phone-alt" aria-hidden="true"></i> 
+                                       <span>call</span>
+                                    </div>
+                                 </a>
+                                 <!-- email -->
+                                 <a  id ="email" class="social-margin">
+                                    <div class="social-icon email">
+                                       <i class="fas fa-envelope" aria-hidden="true"></i>
+                                       <span>email</span>
+                                    </div>
+                                 </a>
+                                 <!-- whatsapp Button -->
+                                 <a  id ="whatsapp_link"  class="social-margin" >
+                                    <div class="social-icon whatsapp">
+                                       <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                       <span>whatsapp</span>
+                                    </div>
+                                 </a>
+                                 <!-- share save contact to address book card Button -->
+                                 <!--<a  id ="user_name"  href="assets/vcard/Elavarasan.vcf" class="social-margin" >
+                                    <div class="social-icon contact">
+                                       <i class="fas fa-address-book" aria-hidden="true"></i>
+                                       <span>Save</span>
+                                    </div>
+                                 </a>-->
+                                 <!-- Payment Button -->
+                                 <a  id ="payment_link" class="social-margin" >
+                                    <div class="social-icon payment">
+                                       <i class="fas fa-money-check-alt" aria-hidden="true"></i>
+                                       <span>payme</span>
+                                    </div>
+                                 </a>
+                                 <!-- Facebook messenger Button -->
+                                 <a  id ="messenger_link" class="social-margin" >
+                                    <div class="social-icon messenger">
+                                       <i class="fab fa-facebook-messenger" aria-hidden="true"></i>
+                                       <span>messenger</span>
+                                    </div>
+                                 </a>
+                                 <!-- share business card Button -->
+                                 <!-- <a href="http://instagram.com/" class="social-margin" title="Share" target="_blank" rel="nofollow">
+                                    <div class="social-icon share">
+                                       <i class="fas fa-share-alt" aria-hidden="true"></i>
+                                    <span>share</span>
+                                    </div>
+                                    </a>-->
+                              </div>
+                           </div>
+                           <div id ="company_heading" class="row heading_style">
+                              <h3 class ="heading_font"><a  >Company : </a></h3>
+                           </div>
+                           <div class="row center_align">
+                              <div class="social-buttons">
+                                 <!-- facebook  Button -->
+                                 <!--<a href="http://www.facebook.com"class="social-margin">
+                                    <div class="social-icon business">
+                                       <i class="far fa-building" aria-hidden="true"></i> 
+                                    <span>business</span>
+                                    </div>
+                                    </a>-->
+                                 <!-- TwitterButton -->
+                                 <a  id ="company_link"class="social-margin">
+                                    <div class="social-icon website">
+                                       <i class="fa fa-globe" aria-hidden="true"></i>
+                                       <span>website</span>
+                                    </div>
+                                 </a>
+                                 <!-- LinkedIn Button -->
+                                 <a id ="google_map_link"  class="social-margin">
+                                    <div class="social-icon location">
+                                       <i class="fas fa-map-marker-alt"aria-hidden="true"></i>
+                                       <span>location</span>
+                                    </div>
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="row heading_style">
+                              <h3 class ="heading_font"><a  >Share this Card : </a></h3>
+                           </div>
+                           <div class="row center_align">
+                              <div class="social-buttons">
+                                 <!-- facebook  Button -->
+                                 <a id="fb_share" href=""class="social-margin" target="blank">
+                                    <div class="social-icon facebook">
+                                       <i class="fab fa-facebook-f" aria-hidden="true"></i> 
+                                       <span>facebook</span>
+                                    </div>
+                                 </a>
+                                 <!-- TwitterButton -->
+                                 <a id="twitter_share" href=""class="social-margin" target="blank">
+                                    <div class="social-icon twitter">
+                                       <i class="fab fa-twitter" aria-hidden="true"></i>
+                                       <span>twitter</span>
+                                    </div>
+                                 </a>
+                                 <!-- LinkedIn Button -->
+                                 <a id="linkedin_share" href="" class="social-margin" target="blank">
+                                    <div class="social-icon linkedin">
+                                       <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                       <span>linkedin</span>
+                                    </div>
+                                 </a>
+                                 <!-- Instagram Button -->
+                                 <a id="whatsapp_share" href="" data-action="share/whatsapp/share" class="social-margin" target="blank">
+                                    <div class="social-icon whatsapp">
+                                       <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                       <span>whatsapp</span>
+                                    </div>
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="row heading_style center_align">
+                              <h3 class ="footer_font"><a href="https://api.whatsapp.com/send?phone=+918531990331">Powered By : Elavarasan - 8531990331</a></h3>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="/static/assets/js/view_card.js"></script>
+      <script>
+         $(document).ready(function(){
+              $(document).bind("contextmenu",function(e){
+                 return false;
+             });
+         });
+      </script>
+   </body>
+</html>
